@@ -45,6 +45,7 @@
 //propsThree = {title, description,price,sort,image}
 
 import ArrowFunctionalComponentWithProps from "./components/LessonThree/ArrowFunctionalComponentWithProps.tsx";
+import Layout from "./components/Layout.tsx";
 
 function App() {
 
@@ -54,13 +55,20 @@ function App() {
         {/*<ClassComponent />*/}
         {/*<ArrowFunctionalComponent />*/}
 
-        <ArrowFunctionalComponentWithProps title="Heading 1"/>
-        <ArrowFunctionalComponentWithProps
-            title="Second Title"
-            description="This is the description for second title" />
+        {/*<ArrowFunctionalComponentWithProps title="Heading 1"/>*/}
+        {/*<ArrowFunctionalComponentWithProps*/}
+        {/*    title="Second Title"*/}
+        {/*    description="This is the description for second title"*/}
+        {/*/>*/}
 
-        <h2 className="cf-text" id="id"></h2>
-        {/*h2.cf-text#id */}
+        <Layout>
+            <ArrowFunctionalComponentWithProps
+                title="Second Title"
+                description="This is the description for second title"
+            />
+
+        </Layout>
+
       </>
   )
 }
