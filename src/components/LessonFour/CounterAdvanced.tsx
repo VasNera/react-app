@@ -1,11 +1,7 @@
 import {useState} from "react";
 import CounterButton from "./CounterButton.tsx";
+import type {CounterState} from "../../types.ts";
 
-type CounterState = {
-    counter: number;
-    lastAction: string;
-    time: string;
-}
 
 const initialState = {
     counter: 0,
