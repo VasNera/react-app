@@ -46,6 +46,7 @@
 
 //import ArrowFunctionalComponentWithProps from "./components/LessonThree/ArrowFunctionalComponentWithProps.tsx";
 import Layout from "./components/Layout.tsx";
+import Counter from "./components/LessonFour/Counter.tsx";
 
 function App() {
 
@@ -61,13 +62,14 @@ function App() {
         {/*    description="This is the description for second title"*/}
         {/*/>*/}
 
-        <Layout>
+        <Layout addClasses="bg-gray-50">
             {/*<ArrowFunctionalComponentWithProps*/}
             {/*    title="Second Title"*/}
             {/*    description="This is the description for second title"*/}
             {/*/>*/}
-            <p className="text-red-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, voluptas!
-            </p>
+            {/*<p className="text-red-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, voluptas!*/}
+            {/*</p>*/}
+            <Counter/>
         </Layout>
 
       </>
