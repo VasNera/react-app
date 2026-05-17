@@ -29,7 +29,7 @@ const CounterWithCustomHook = () => {
             {
                 lastAction && (
                     <p className="text-center pt-8">
-                        Last Change: <strong>{lastAction }</strong> at{" "}
+                        Last Change: <strong>{lastAction}</strong> at{" "}
                         <strong>{time}</strong>
                     </p>
                 )
