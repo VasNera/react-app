@@ -8,7 +8,8 @@ import Layout from "./components/Layout.tsx";
 // import CounterWithCustomHook from "./components/LessonFive/CounterWithCustomHook.tsx";
 // import NameChangerWithTitle from "./components/LessonFive/NameChangerWithTitle.tsx";
 // import AutoRedirect from "./components/LessonSix/AutoRedirect.tsx";
-import AutoRedirectAdvanced from "./components/LessonSix/AutoRedirectAdvanced.tsx";
+// import AutoRedirectAdvanced from "./components/LessonSix/AutoRedirectAdvanced.tsx";
+import WindowSize from "./components/LessonSix/WindowSize.tsx";
 // import {useEffect} from "react";
 // import Counter from "./components/LessonFour/Counter.tsx";
 // import ClassCounter from "./components/LessonFour/ClassCounter.tsx";
@@ -109,7 +110,8 @@ function App() {
         {/* Lesson Six*/}
             <Layout addClasses="bg-gray-50">
                 {/*<AutoRedirect/>*/}
-                <AutoRedirectAdvanced />
+                {/*<AutoRedirectAdvanced />*/}
+                <WindowSize/>
             </Layout>
 </>
     )
