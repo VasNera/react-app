@@ -13,14 +13,14 @@
 // import WindowSize from "./components/LessonSix/WindowSize.tsx";
 // import FocusInput from "./components/LessonSix/FocusInput.tsx";
 // import PreviousValue from "./components/LessonSix/PreviousValue.tsx";
+// import {useEffect} from "react";
 import {Route, Routes} from "react-router";
 import NameChanger from "./components/LessonFive/NameChanger.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import Counter from "./components/LessonFour/Counter.tsx";
 import CounterAdvanced from "./components/LessonFour/CounterAdvanced.tsx";
 import RouterLayout from "./components/RouterLayout.tsx";
-// import Layout from "./components/Layout.tsx";
-// import {useEffect} from "react";
+import UserPage from "./pages/UserPage.tsx";
 // import Counter from "./components/LessonFour/Counter.tsx";
 // import ClassCounter from "./components/LessonFour/ClassCounter.tsx";
 // import {useState} from "react";
@@ -77,10 +77,10 @@ function App() {
     //   }
     //   )
 
-    // useEffect(() => {
-    //     history.pushState({},"","/about");
-    // },[])
 
+    // useEffect(() => {
+    //   history.pushState({}, "", "/about");
+    // }, []);
 
     return (
         <>
@@ -120,60 +120,54 @@ function App() {
             {/*</Layout>*/}
 
             {/*  LESSON SIX  */}
-            {/*<Layout addClasses="bg-gray-50">*/}
+            {/*  <Layout addClasses="bg-gray-50">*/}
             {/*    /!*<AutoRedirect />*!/*/}
             {/*    /!*<AutoRedirectAdvanced />*!/*/}
             {/*    /!*<WindowSize/>*!/*/}
             {/*    /!*<FocusInput />*!/*/}
-            {/*    <PreviousValue />*/}
-            {/*</Layout>*/}
+            {/*    <PreviousValue/>*/}
+            {/*  </Layout>*/}
 
             {/*LESSON SEVEN*/}
             {/*<Routes>*/}
-            {/*    <Route index element={<HomePage/>}/>*/}
-            {/*    <Route path ="name-changer" element={<NameChanger />}/>*/}
-            {/*    <Route path ="counter" element={<Counter />}/>*/}
-            {/*    <Route path ="counter-advanced" element={<CounterAdvanced />}/>*/}
-            {/*  </Routes>*/}
-
+            {/*  <Route index element={<HomePage />} />*/}
+            {/*  /!*<Route path="/" element={<HomePage />} />*!/*/}
+            {/*  <Route path="name-changer" element={<NameChanger />} />*/}
+            {/*  <Route path="counter" element={<Counter />} />*/}
+            {/*  <Route path="counter-advanced" element={<CounterAdvanced />} />*/}
+            {/*</Routes>*/}
 
             {/*/*/}
+            {/*/examples/*/}
             {/*/examples/name-changer*/}
             {/*/examples/counter*/}
             {/*/examples/counter-advanced*/}
 
             <Routes>
-                <Route element={<RouterLayout/>}/>
-                <Route index element={<HomePage/>}/>
+                <Route element={<RouterLayout />}>
+                    <Route index element={<HomePage />} />
+                    {/*<Route path="examples?">*/}
+                    {/*<Route path="examples">*/}
+                    {/*  <Route index element={<NameChanger />} />*/}
+                    {/*  <Route path="name-changer" element={<NameChanger />} />*/}
+                    {/*  <Route path="counter" element={<Counter />} />*/}
+                    {/*  <Route path="counter-advanced" element={<CounterAdvanced />} />*/}
+                    {/*</Route>*/}
 
-                <Route path="examples?">
-                <Route path ="name-changer" element={<NameChanger />}/>
-                <Route path ="counter" element={<Counter />}/>
-                <Route path ="counter-advanced" element={<CounterAdvanced />}/>
+                    <Route path="users">
+                        {/*<Route index element={<UserListPage />} />*/}
+                        <Route path=":userId" element={<UserPage />} /> {/*  /users/15 Path Params  */}
+                        {/*  /users?id=15&page=2&sort=asc Query Params  */}
+                    </Route>
+
                 </Route>
-
-
-                {/*/users*/}
-                {/*/users/15*/}
-                {/*<Route path="users">*/}
-                {/*    <Route index element={<UserListPage/>}/>*/}
-                {/*    <Route path=":userId" element={<UserPage/>}/>*/}
-                {/*</Route>*/}
-
-                {/*/files*/}
-                {/*/files/**/}
-                {/*<Route>*/}
-                {/*    <Route path="files/*" element={<File/>}/>*/}
-                {/*    */}
-
+                {/* /files/* */}
+                {/*<Route path="files/*" element={<File />} />*/}
                 {/*let params = useParams();*/}
-                {/*let filepath = params[*}*/}
-                {/*</Route>*/}
-                {/*<Route path ="*" element={<NotFoundPage/>}/>*/}
+                {/*let filepath = params["*"]*/}
+                {/*<Route path="*" element={<NotFoundPage />} />*/}
 
-
-                </Routes>
-
+            </Routes>
 
         </>
     )
