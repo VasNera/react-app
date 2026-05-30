@@ -1,7 +1,7 @@
-import type {Product} from "../schemas/products.ts";
+import {type Product} from "../schemas/products"
 
-const API_URL = import.meta.env.VITE_API_URL;
-const TENANT_ID = import.meta.env.VITE_TENANT_ID;
+const API_URL = import.meta.env.VITE_API_URL
+const TENANT_ID = import.meta.env.VITE_TENANT_ID
 
 export async function getProducts(): Promise<Product[]> {
     const res = await fetch(`${API_URL}/tenants/${TENANT_ID}/products/`)
