@@ -1,4 +1,5 @@
 import {Link} from "react-router";
+import {AuthButton} from "@/components/AuthButton.tsx";
 
 const Header =() =>{
     return (
@@ -12,7 +13,8 @@ const Header =() =>{
 
                     <nav className="flex gap-4 text-white font-medium">
                         <Link to="/">Home</Link>
-                        <Link to="/products">Products</Link>
+                        {/*<Link to="/products">Products</Link>*/}
+                        <AuthButton/>
 
                     </nav>
 

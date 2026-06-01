@@ -24,6 +24,12 @@ import UserPage from "./pages/UserPage.tsx";
 import SearchPage from "./pages/SearchPage.tsx";
 import MultiFieldForm from "./components/LessonNine/MultiFieldForm.tsx";
 import MultiFieldFormWithValidation from "./components/LessonNine/MultiFieldFormWithValidation.tsx";
+import MultiFieldFormWithZod from "./components/LessonTen/MultiFieldFormWithZod.tsx";
+import MultiFieldFormWithHookForm from "./components/LessonTen/MultiFieldFormWithHookForm.tsx";
+import ProductListPage from "./pages/ProductListPage.tsx";
+import ProductPage from "@/pages/ProductPage.tsx";
+import LoginPage from "@/pages/LoginPage.tsx";
+import ProtectedRoute from "@/components/ProtectedRoute.tsx";
 // import Counter from "./components/LessonFour/Counter.tsx";
 // import ClassCounter from "./components/LessonFour/ClassCounter.tsx";
 // import {useState} from "react";
@@ -159,16 +165,26 @@ function App() {
 
                     <Route path="users">
                         {/*<Route index element={<UserListPage />} />*/}
-                        <Route path=":userId" element={<UserPage />} /> {/*  /users/15 Path Params  */}
-
+                        <Route path=":userId" element={<UserPage />} />
+                        {/*  /users/15  Path Params  */}
+                        {/*  /users?id=15  Query Params  */}
+                        {/*  /users?page=2&sort=asc  Query Params  */}
                     </Route>
-                    <Route path="search" element={<SearchPage/>}/>
-                    {/*  /search?query=React&page=2 Query Params  */}
 
-                    <Route path="Multifield-form" element={<MultiFieldForm/>}/>
-                    <Route path="Multifield-form-with-validation" element={<MultiFieldFormWithValidation/>}/>
+                    <Route path="search" element={<SearchPage />} />
+                    {/*  /search?query=React&page=2  Query Params  */}
 
+                    <Route path="multifield-form" element={<MultiFieldForm/>}/>
+                    <Route path="multifield-form-validation" element={<MultiFieldFormWithValidation/>}/>
+                    <Route path="multifield-form-zod" element={<MultiFieldFormWithZod/>}/>
+                    <Route path="multifield-form-hook-form" element={<MultiFieldFormWithHookForm/>}/>
 
+                    <Route path="products" element={<ProtectedRoute/>}>
+                        <Route index element={<ProductListPage />} />
+                        <Route path=":productId" element={<ProductPage />} />
+                    </Route>
+
+                    <Route path="login" element={<LoginPage/>}/>
 
                 </Route>
                 {/* /files/* */}
